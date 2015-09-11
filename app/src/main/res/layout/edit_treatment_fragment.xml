@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#795548"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Tell us how you feel ?" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_height="300dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:text="Not great" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:text="Great" />
+
+    </LinearLayout>
+
+    <!--<SeekBar-->
+        <!--android:id="@+id/range_bar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--/>-->
+        <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:dsb_min="2"
+            android:paddingLeft="30px"
+            android:paddingRight="30px"
+            android:paddingTop="10px"
+            android:minHeight="6dip"
+            android:maxHeight="6dip"
+            android:paddingBottom="10px"
+            android:id="@+id/range_bar"
+            app:dsb_max="15" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/follow_up_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Follow up" />
+
+        <Button
+            android:id="@+id/call_consult_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Consult" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/click_to_dismiss"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_height="30dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Click to dismiss"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</LinearLayout>
