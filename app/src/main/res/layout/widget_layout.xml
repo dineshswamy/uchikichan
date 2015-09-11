@@ -5,14 +5,12 @@
     android:gravity="center"
     android:id="@+id/parent_layout"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="match_parent"
-        android:text="How well are you ?"
-        android:textColor="#ffffff"
-        android:layout_gravity="center"
-        android:textSize="30dp"
-        android:gravity="center"
-        android:id="@+id/prompt_text"
-        android:layout_height="wrap_content" />
 
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="How are feeling"
+    android:textColor="#ffffff"
+    android:textSize="30dp"
+    />
 </LinearLayout>

@@ -11,6 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textSize="25dp"
+        android:padding="10dp"
+        android:textStyle="bold"
         android:text="Tell us how you feel ?" />
 
     <LinearLayout
@@ -50,7 +53,7 @@
         <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            app:dsb_min="2"
+            app:dsb_min="1"
             android:paddingLeft="30px"
             android:paddingRight="30px"
             android:paddingTop="10px"
@@ -58,13 +61,14 @@
             android:maxHeight="6dip"
             android:paddingBottom="10px"
             android:id="@+id/range_bar"
-            app:dsb_max="15" />
+            app:dsb_max="100" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/buttons_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:visibility="gone"
         android:orientation="horizontal">
 
         <Button
@@ -86,12 +90,15 @@
         android:id="@+id/click_to_dismiss"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_height="30dp">
+        android:layout_height="50dp">
 
         <TextView
             android:layout_width="match_parent"
             android:text="Click to dismiss"
             android:gravity="center"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:background="@drawable/circular_layout"
             android:layout_height="wrap_content" />
 
     </LinearLayout>

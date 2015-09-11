@@ -1,9 +1,13 @@
 package sleeplessworks.uchikichan;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -13,15 +17,15 @@ public class TreatmentStatusDBHelper extends SQLiteOpenHelper {
     // Database Info
     private static final String DATABASE_NAME = "health_records";
     private static final int DATABASE_VERSION = 1;
-
+    private static final String TAG = "TreatmentStatusDBHelper";
     // Table Names
     private static final String TABLE_TREATMENT_STATUS = "treatment_status";
 
     // Post Table Columns
-    private static final String KEY_ID = "id";
-    private static final String KEY_APPOINTMENT_ID= "appointmentId";
-    private static final String KEY_STATUS_VALUE = "status_value";
-    private static final String KEY_STATUS_TIME = "status_time";
+    public static final String KEY_ID = "id";
+    public static final String KEY_APPOINTMENT_ID= "appointmentId";
+    public static final String KEY_STATUS_VALUE = "statusValue";
+    public static final String KEY_STATUS_TIME = "statusTime";
 
     private static TreatmentStatusDBHelper sInstance;
 
@@ -60,7 +64,39 @@ public class TreatmentStatusDBHelper extends SQLiteOpenHelper {
     }
     
 
-    public void insertIntoTreatmentStatus(String appointment_id , String statusValue, Date statusTime) {
+    public void insertIntoTreatmentStatus(String appointment_id , int statusValue, String statusTime) {
+        SQLiteDatabase db = getWritableDatabase();
+        // It's a good idea to wrap our insert in a transaction. This helps with performance and ensures
+        // consistency of the database.
+        db.beginTransaction();
+        try {
+            ContentValues values = new ContentValues();
+            values.put(KEY_APPOINTMENT_ID, appointment_id);
+            values.put(KEY_STATUS_VALUE, statusValue);
 
+            values.put(KEY_STATUS_TIME, statusTime);
+            // Notice how we haven't specified the primary key. SQLite auto increments the primary key column.
+            db.insertOrThrow(TABLE_TREATMENT_STATUS, null, values);
+            db.setTransactionSuccessful();
+        } catch (Exception e) {
+            Log.d(TAG, "Error while trying to add post to database");
+        } finally {
+            db.endTransaction();
+        }
     }
+
+    /**
+     * Return a cursor object with all rows in the table.
+     * @return A cursor suitable for use in a SimpleCursorAdapter
+     */
+    public Cursor getAll() {
+        SQLiteDatabase db = getReadableDatabase();
+        if (db == null) {
+            return null;
+        }
+        String query = "select * from "+TABLE_TREATMENT_STATUS+" order by "+KEY_STATUS_TIME;
+        return db.rawQuery(query, null);
+    }
+
+
 }
