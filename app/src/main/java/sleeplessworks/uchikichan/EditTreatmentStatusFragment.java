@@ -99,9 +99,9 @@ public class EditTreatmentStatusFragment extends Fragment implements  View.OnCli
     public void onStopTrackingTouch(DiscreteSeekBar discreteSeekBar) {
 
         //Insert into the db
-        final String appointmentId = "115";
-        final String doctor_id = "114";
-        final String patient_id = "206";
+        final String appointmentId = "42349";
+        final String doctor_id = "124";
+        final String patient_id = "225";
         Date statusTime = new Date();
         final int progress = discreteSeekBar.getProgress();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
@@ -120,6 +120,7 @@ public class EditTreatmentStatusFragment extends Fragment implements  View.OnCli
                 mParams.put("appointment_id",appointmentId);
                 mParams.put("time",statusTimeStr);
                 mParams.put("value",Integer.toString(progress));
+                mParams.put("name","Ramesh");
 
                 return mParams;
             }

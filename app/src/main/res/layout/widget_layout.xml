@@ -5,12 +5,54 @@
     android:gravity="center"
     android:id="@+id/parent_layout"
     android:layout_height="match_parent">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="How are feeling"
+    android:text="How are you  feeling ?"
     android:textColor="#ffffff"
-    android:textSize="30dp"
+    android:layout_marginBottom="10dp"
     />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="100dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/smile1"
+            />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/smile2"
+            />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/smile3"
+            />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/smile4"
+            />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="50dp"
+            android:src="@drawable/smile5"
+            />
+
+    </LinearLayout>
+</LinearLayout>
 </LinearLayout>
