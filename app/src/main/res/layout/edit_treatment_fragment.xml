@@ -22,6 +22,50 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_height="300dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="100dp">
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/circular_layout"
+                android:id="@+id/smiley_1"
+                android:src="@drawable/smile1"
+                />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/smiley_2"
+                android:src="@drawable/smile2"
+                />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/smiley_3"
+                android:src="@drawable/smile3"
+                />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/smiley_4"
+                android:src="@drawable/smile4"
+                />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="50dp"
+                android:id="@+id/smiley_5"
+                android:src="@drawable/smile5"
+                />
+
+        </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,8 +112,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:visibility="gone"
         android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:text="Your health doesnt seem to be okay ?"
+            />
 
         <Button
             android:id="@+id/follow_up_btn"
@@ -90,6 +140,7 @@
         android:id="@+id/click_to_dismiss"
         android:layout_gravity="center"
         android:gravity="center"
+        android:layout_marginTop="10dp"
         android:layout_height="50dp">
 
         <TextView
@@ -98,7 +149,7 @@
             android:gravity="center"
             android:textSize="20dp"
             android:padding="10dp"
-            android:background="@drawable/circular_layout"
+            android:background="@drawable/circular_layout_bg"
             android:layout_height="wrap_content" />
 
     </LinearLayout>

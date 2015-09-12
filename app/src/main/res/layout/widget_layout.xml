@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:background="@drawable/circular_layout"
     android:gravity="center"
+    android:background="@drawable/circular_layout_bg"
     android:id="@+id/parent_layout"
     android:layout_height="match_parent">
 <LinearLayout
@@ -13,46 +13,54 @@
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="How are you  feeling ?"
-    android:textColor="#ffffff"
+    android:text="Are you feeling well now?"
+    android:textColor="#E65100"
+    android:textSize="20dp"
     android:layout_marginBottom="10dp"
     />
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:gravity="center"
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="100dp">
         <ImageView
-            android:layout_width="50dp"
+            android:layout_width="55dp"
             android:layout_height="50dp"
             android:layout_marginRight="10dp"
+            android:background="@drawable/circular_layout"
+            android:id="@+id/smiley_1"
             android:src="@drawable/smile1"
             />
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginRight="10dp"
+            android:id="@+id/smiley_2"
             android:src="@drawable/smile2"
             />
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginRight="10dp"
+            android:id="@+id/smiley_3"
             android:src="@drawable/smile3"
             />
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginRight="10dp"
+            android:id="@+id/smiley_4"
             android:src="@drawable/smile4"
             />
         <ImageView
             android:layout_width="50dp"
             android:layout_marginRight="10dp"
             android:layout_height="50dp"
+            android:id="@+id/smiley_5"
             android:src="@drawable/smile5"
             />
 
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
 </LinearLayout>
